@@ -44,6 +44,7 @@ print(f"Requesting data from {url}")
 # Iterate through each post "containing" an image and download this image into the directory created above.
 posts = response["data"]["children"]
 for post in posts:
+    # TODO: Perhaps isolate the posts with images by using filter() instead of a try except?
     try:
         if post["data"]["post_hint"] == "image":
             image_url = post["data"]["url"]
